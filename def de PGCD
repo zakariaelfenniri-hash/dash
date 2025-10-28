@@ -1,0 +1,39 @@
+DEFINITION DE PGCD 
+  le pgcd de deux entier naturel a et b est le plus grand entier qui divise a la fois a et b sans laisser de reste
+  
+
+  le principe :
+PGCD(a,b) = PGCD(b,a mod b) et on repet jusqu ce que le rest soit nul
+  
+  exemple :
+1)
+  a = 81 , b=57
+  81 mod 57 = 24 
+  24 mod 57 =9
+  9 mod 24 = 6
+  6 mod 9 =3
+  donc le pgcd a et b est : 3
+
+  2)
+    a =  84 ,b =30 
+    84 % 30 =24
+    30 % 24 = 6
+    24 % 6 = 0
+    Donc le pgcd de a et b : 6
+
+          Algorithme :
+   Algorithme PGCD
+Variables : a, b, reste : entiers
+
+Début
+    Écrire "Entrer deux entiers :"
+    Lire a, b
+
+    Tant que b ≠ 0 faire
+        reste ← a mod b
+        a ← b
+        b ← reste
+    Fin Tant que
+
+    Écrire "Le PGCD est :", a
+Fin
